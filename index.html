@@ -8,24 +8,26 @@
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="You Rang?">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="theme-color" content="#2b1d3a">
-<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Crect width='180' height='180' fill='%232b1d3a'/%3E%3Ctext x='90' y='122' font-size='100' text-anchor='middle'%3E%F0%9F%94%94%3C/text%3E%3C/svg%3E">
+<meta name="theme-color" content="#1a100b">
+<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Crect width='180' height='180' fill='%231a100b'/%3E%3Ctext x='90' y='122' font-size='100' text-anchor='middle'%3E%F0%9F%94%94%3C/text%3E%3C/svg%3E">
 <style>
   :root {
-    --bg: #2b1d3a; --bg2: #3d2a52; --ink: #fdf6ec; --muted: #c9b8dd;
+    --bg: #1a100b; --bg2: #3a2418; --ink: #f7ecd9; --muted: #dcc7a3;
     --gold: #f2c14e; --gold-dk: #c99a2e; --rose: #ff8fa3; --ok: #8fe3b0;
   }
   * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
   html { background: var(--bg); }
   html, body { margin: 0; min-height: 100%; }
   body {
-    background: radial-gradient(circle at 50% 30%, var(--bg2), var(--bg) 70%);
+    background: transparent;
     color: var(--ink);
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     display: flex; flex-direction: column; align-items: center;
     padding: max(24px, env(safe-area-inset-top)) 16px max(24px, env(safe-area-inset-bottom));
     min-height: 100%; text-align: center;
   }
+  body::before { content: ""; position: fixed; inset: 0; z-index: -1;
+    background: linear-gradient(rgba(20,12,8,.25), rgba(20,12,8,.7)), url("library-bg.jpg") center / cover; }
   h1 { font-family: Georgia, "Times New Roman", serif; font-style: italic; font-weight: 400;
        font-size: 2.4rem; margin: 8px 0 4px; letter-spacing: .5px; }
   .sub { color: var(--muted); margin: 0 0 12px; font-size: 1rem; }
@@ -62,13 +64,12 @@
     border: 1px solid rgba(143,227,176,.4); max-width: 460px; display: none; font-size: 1.15rem;
   }
   .reply b { display: block; font-size: .8rem; color: var(--muted); font-weight: 400; margin-bottom: 4px; }
-  .foot { margin-top: auto; padding-top: 28px; color: #8f7fa5; font-size: .8rem; }
-  .butler { width: min(62vw, 250px); margin: 0 auto 6px; display: block;
-            -webkit-mask-image: linear-gradient(#000 80%, transparent); mask-image: linear-gradient(#000 80%, transparent); transform-origin: 50% 100%;
-            animation: idle 3.2s ease-in-out infinite; }
+  .foot { margin-top: auto; padding-top: 28px; color: #a88f72; font-size: .8rem; }
+  .butler { width: min(70vw, 280px); margin: 4px auto 18px; display: block; border-radius: 10px;
+            border: 6px solid var(--gold-dk); outline: 2px solid #6b4a12; outline-offset: -2px;
+            box-shadow: 0 0 0 3px #3a2418, 0 14px 30px rgba(0,0,0,.6); transform-origin: 50% 100%; }
   .butler.bow { animation: bow 1.1s ease-in-out; }
-  @keyframes idle { 0%,100% { transform: translateY(0) } 50% { transform: translateY(-4px) } }
-  @keyframes bow { 0%,100% { transform: rotate(0) } 35%,60% { transform: rotate(-14deg) translateY(6px) } }
+  @keyframes bow { 0%,100% { transform: rotate(0) } 35%,60% { transform: rotate(-3deg) scale(.98) translateY(4px) } }
   /* setup screen */
   .setup { max-width: 520px; text-align: left; line-height: 1.5; }
   .setup code { background: rgba(0,0,0,.3); padding: 2px 6px; border-radius: 6px; word-break: break-all; }
@@ -83,7 +84,7 @@
   <h1>You Rang?</h1>
   <p class="sub">Your devoted servant awaits. Ring the bell.</p>
 
-  <img class="butler" id="butler" src="kyle-butler.png" alt="Kyle the butler, in a black tux">
+  <img class="butler" id="butler" src="kyle-butler.jpg" alt="Kyle the butler, in a tux in a wood-paneled library">
 
   <button class="bell" id="bell" aria-label="Ring for Kyle">
     <svg viewBox="0 0 200 240" aria-hidden="true">
