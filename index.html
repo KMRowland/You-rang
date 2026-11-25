@@ -140,16 +140,16 @@ const REQUESTS = [
 
 // Kyle's reply buttons inside his notification (ntfy allows up to 3)
 const REPLIES = [
-  ["On my way!", `${HIM} is sprinting to your side. Possibly in socks.`],
-  ["2 minutes", `${HIM} acknowledges the summons and will arrive in about 2 minutes.`],
+  ["On my way!", `${HIM}'s on his way.`],
+  ["2 minutes", `${HIM} will be there in two minutes.`],
   ["Fetching it", `${HIM} is fetching the thing first, then coming straight to you.`]
 ];
 
 const BELL_LINES = [
-  "The bell has been rung. Somewhere, a man drops everything.",
-  "Summons delivered. The staff has been alerted.",
-  "Ding! Your loyal servant has been notified.",
-  "Message sent. Expect footsteps shortly."
+  `Sent. ${HIM} has been notified.`,
+  `${HIM} got your message.`,
+  `Message delivered to ${HIM}.`,
+  `Done. ${HIM} knows you need him.`
 ];
 
 const $ = (id) => document.getElementById(id);
