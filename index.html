@@ -63,7 +63,8 @@
   }
   .reply b { display: block; font-size: .8rem; color: var(--muted); font-weight: 400; margin-bottom: 4px; }
   .foot { margin-top: auto; padding-top: 28px; color: #8f7fa5; font-size: .8rem; }
-  .butler { width: min(56vw, 220px); margin: 0 0 10px; transform-origin: 50% 100%;
+  .butler { width: min(62vw, 250px); margin: 0 auto 6px; display: block;
+            -webkit-mask-image: linear-gradient(#000 80%, transparent); mask-image: linear-gradient(#000 80%, transparent); transform-origin: 50% 100%;
             animation: idle 3.2s ease-in-out infinite; }
   .butler.bow { animation: bow 1.1s ease-in-out; }
   @keyframes idle { 0%,100% { transform: translateY(0) } 50% { transform: translateY(-4px) } }
@@ -82,66 +83,7 @@
   <h1>You Rang?</h1>
   <p class="sub">Your devoted servant awaits. Ring the bell.</p>
 
-  <svg class="butler" id="butler" role="img" aria-label="Kyle the butler" viewBox="200 150 680 850" stroke-linejoin="round" stroke-linecap="round">
-  <g stroke="#14101a" stroke-width="7">
-    <!-- tailcoat body -->
-    <path d="M232 1000 L250 850 Q262 785 340 762 L440 730 L640 730 L740 762 Q818 785 830 850 L848 1000Z" fill="#23202c"/>
-    <!-- shirt front -->
-    <path d="M440 730 L640 730 L540 960Z" fill="#f7f3ea"/>
-    <!-- waistcoat -->
-    <path d="M470 790 L540 960 L610 790 L640 1000 L440 1000Z" fill="#3a3346"/>
-    <!-- lapels -->
-    <path d="M440 730 L400 770 L455 830 L425 860 L520 1000 L470 790Z" fill="#14101a"/>
-    <path d="M640 730 L680 770 L625 830 L655 860 L560 1000 L610 790Z" fill="#14101a"/>
-    <!-- collar wings -->
-    <path d="M450 712 L540 740 L470 752Z M630 712 L540 740 L610 752Z" fill="#ffffff"/>
-    <!-- bow tie -->
-    <path d="M540 752 L478 728 L470 782 Z M540 752 L602 728 L610 782 Z" fill="#14101a"/>
-    <rect x="526" y="738" width="28" height="30" rx="6" fill="#14101a"/>
-    <!-- towel over arm -->
-    <path d="M745 840 L800 832 L812 950 L788 985 L762 952Z" fill="#f7f3ea"/>
-    <!-- neck -->
-    <path d="M445 600 L445 720 Q540 760 635 720 L635 600Z" fill="#e8a882"/>
-    <!-- ears -->
-    <path d="M392 425 Q352 410 352 455 Q354 520 400 545Z" fill="#f2b993"/>
-    <path d="M686 432 Q726 418 724 465 Q720 528 680 548Z" fill="#e0a07c"/>
-    <!-- face -->
-    <path d="M392 330 Q382 420 390 520 Q396 610 450 665 Q490 698 530 700 Q585 698 625 662 Q676 610 684 520 Q696 430 688 330 Q640 230 540 228 Q440 230 392 330Z" fill="#f2b993"/>
-  </g>
-  <!-- cel shadow (right side of face) -->
-  <path d="M640 300 Q690 360 686 470 Q680 600 625 655 Q588 690 545 696 Q600 640 620 560 Q646 460 640 300Z" fill="#df9f7b"/>
-  <path d="M445 655 Q540 712 635 655 L635 690 Q540 740 445 690Z" fill="#c98a68"/>
-  <!-- stubble -->
-  <path d="M430 600 Q470 680 530 690 Q600 685 640 600 Q620 650 580 668 Q540 680 520 676 Q470 668 430 600Z" fill="#c99b84" opacity=".7"/>
-  <path d="M470 560 Q525 540 590 562 Q560 552 525 552 Q490 552 470 560Z" fill="#b98a74" opacity=".7"/>
-  <!-- hair -->
-  <path d="M388 410 Q376 300 408 250 L418 228 L436 236 L444 212 L462 222 L472 198 L492 208 L504 188 L522 202 L538 182 L554 200 L572 186 L586 206 L604 196 L612 218 L632 214 L636 238 L656 240 L660 262 Q700 310 692 445 L682 445 Q676 345 652 305 Q604 268 560 258 Q505 246 470 266 Q432 292 414 342 Q406 380 400 410Z"
-        fill="#3b2a20" stroke="#14101a" stroke-width="7"/>
-  <path d="M462 238 L484 216 L496 232 L520 206 L534 228 L556 208 L566 230 L590 214 L598 238 Q560 230 530 236 Q495 242 462 238Z" fill="#6a4c38"/>
-  <!-- eyebrows -->
-  <path d="M415 408 Q450 388 492 400" stroke="#2a1d16" stroke-width="11" fill="none"/>
-  <path d="M566 404 Q608 392 642 412" stroke="#2a1d16" stroke-width="11" fill="none"/>
-  <!-- eyes -->
-  <g stroke="#14101a" stroke-width="5">
-    <path d="M436 434 Q465 414 494 432 Q465 448 436 434Z" fill="#ffffff"/>
-    <path d="M560 438 Q588 420 616 438 Q588 452 560 438Z" fill="#ffffff"/>
-  </g>
-  <circle cx="467" cy="432" r="10" fill="#7f9db3" stroke="#14101a" stroke-width="3"/>
-  <circle cx="589" cy="437" r="10" fill="#7f9db3" stroke="#14101a" stroke-width="3"/>
-  <circle cx="467" cy="432" r="4" fill="#14101a"/><circle cx="589" cy="437" r="4" fill="#14101a"/>
-  <path d="M432 431 Q465 408 498 428 M556 436 Q588 414 620 434" stroke="#14101a" stroke-width="6" fill="none"/>
-  <path d="M440 444 Q466 452 492 442 M562 448 Q588 456 614 446" stroke="#c98a68" stroke-width="4" fill="none"/>
-  <!-- nose -->
-  <path d="M515 445 Q505 500 492 520 Q505 540 525 534 Q545 540 556 522" stroke="#14101a" stroke-width="5" fill="none"/>
-  <path d="M530 450 Q548 495 556 522 Q545 528 535 526Z" fill="#df9f7b"/>
-  <!-- smile lines -->
-  <path d="M482 538 Q452 560 452 588 M574 540 Q606 560 606 590" stroke="#b37658" stroke-width="5" fill="none"/>
-  <!-- mouth -->
-  <path d="M462 572 Q528 560 594 574 Q566 610 528 610 Q490 608 462 572Z" fill="#8a2f2f" stroke="#14101a" stroke-width="6"/>
-  <path d="M470 575 Q528 565 588 577 Q578 592 528 594 Q482 592 470 575Z" fill="#ffffff"/><path d="M490 620 Q528 632 566 620" stroke="#b37658" stroke-width="5" fill="none"/>
-  <!-- chin cleft hint -->
-  <path d="M520 668 Q530 676 540 668" stroke="#b37658" stroke-width="4" fill="none"/>
-</svg>
+  <img class="butler" id="butler" src="kyle-butler.png" alt="Kyle the butler, in a black tux">
 
   <button class="bell" id="bell" aria-label="Ring for Kyle">
     <svg viewBox="0 0 200 240" aria-hidden="true">
